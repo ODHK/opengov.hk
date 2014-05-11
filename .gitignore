@@ -11,3 +11,7 @@ env/
 index
 log
 static/
+/requirements.txt~
+*~
+\#*\#
+/.\#*
