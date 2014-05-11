@@ -9,25 +9,18 @@ from fabric.contrib.files import exists, append
 
 ## GLOBALS
 
-env.os = 'Ubuntu'
-env.project_name = 'opengov'
-env.project_url = 'opengov.hk'
-env.hosts = ['128.199.212.155']
+env.project_name = 'opengov'          # e.g. 'opengov'
+env.project_url = 'opengov.hk'        # e.g. 'opengov.hk'
+env.hosts = ['128.199.212.155']       # default to open platform
 env.path = '/var/www/%(project_url)s' % env
 env.user = 'su_opengov'
 
-env.github_account = 'ODHK'
-env.github_repo = 'opengov.hk'
-env.github_email = 'info@opengov.hk'
-env.github_name = 'OpenGov.HK Admin'
+env.github_account = 'ODHK'               # e.g. 'ODHK'
+env.github_repo = 'opengov.hk'                  # e.g. 'opengov.hk'
+env.setup_github = True
 
 env.key_filename = "~/.ssh/id_rsa"
 env.colorize_errors = True
-
-env.domain_path = env.path
-env.current_path = "%(domain_path)s/current" % env
-env.releases_path = "%(domain_path)s/releases" % env
-env.shared_path = "%(domain_path)s/shared" % env
 env.env_file = "requirements.txt"
 
 ## ENVIRONMENTS
@@ -36,15 +29,39 @@ def localhost():
     "Use the local virtual server"
     env.hosts = ['localhost']
     env.user = 'io'
-    env.path = '/srv/%(project_url)s' % env
+    env.path = '/srv/www/%(project_url)s' % env
     env.env_file = "requirements.txt"
- 
+    env.setup_github = False
+    paths()
+
 def platform():
     "Use the open platform"
     env.hosts = ['opengov.hk']
     env.user = 'su_opengov'
     env.path = '/var/www/%(project_url)s' % env
     env.env_file = "requirements.txt"
+    env.github_email = 'info@opengov.hk'
+    env.github_name = 'OpenGov.HK Admin'
+    env.setup_github = True
+    paths()
+
+def ds1(student):
+    "DS1 Playground"
+    env.hosts = ['opengov.hk']
+    env.user = "ds1-%s" % student
+    env.path = '/var/www/%(project_url)s' % env
+    env.env_file = "requirements.txt"
+    env.github_email = 'info@opengov.hk'
+    env.github_name = 'OpenGov.HK Admin'
+    env.setup_github = True
+    paths()
+
+
+def paths():
+    env.domain_path = env.path
+    env.current_path = "%(domain_path)s/current" % env
+    env.releases_path = "%(domain_path)s/releases" % env
+    env.shared_path = "%(domain_path)s/shared" % env
 
 ## TASKS
 
@@ -81,11 +98,11 @@ def prepare_deploy():
 def deploy():
     """
     Deploy the latest version of the site to the servers, install any
-    required third party modules, install the virtual host and 
+    required third party modules, install the virtual host and
     then restart the platform
     """
     require('hosts', provided_by=[localhost,platform])
-    
+
     releases()
     checkout()
     update_env()
@@ -97,9 +114,9 @@ def deploy():
 
 def hotfix():
     """
-    Deploy a hotfix to to server. Does not create a new release directory, does 
+    Deploy a hotfix to to server. Does not create a new release directory, does
     not install any dependencies, also does not restart the server.
-    """ 
+    """
     releases()
     with cd(env.current_path):
         pull()
@@ -123,7 +140,7 @@ def test():
 def create_user(username, password, admin='no'):
     "Create unix user, supply admin=yes for sudo enabled accounts"
     with settings(user='root'):
-        
+
         if admin == 'yes':
         # Create the admin group and add it to the sudoers file
             admin_group = 'admin'
@@ -131,16 +148,16 @@ def create_user(username, password, admin='no'):
             run('echo "%{group} ALL=(ALL) ALL" >> /etc/sudoers'.format(
                 group=admin_group))
 
-        # Create the new user (default group=username); 
+        # Create the new user (default group=username);
         run('adduser {username} --disabled-password --gecos ""'.format(
             username=username))
-      
+
         # add to admin group
-        if admin == 'yes': 
+        if admin == 'yes':
             run('adduser {username} {group}'.format(
                 username=username,
                 group=admin_group))
-      
+
         # Set the password for the new admin user
         run('echo "{username}:{password}" | chpasswd'.format(
             username=username,
@@ -155,8 +172,8 @@ def promote_to_admin(username):
 def create_django_admin():
     with cd(env.current_release):
         run('python manage.py createsuperuser')
-     
-# SSH Key Management 
+
+# SSH Key Management
 
 def generate_deploy_key():
     run('ssh-keygen -t rsa -C "%(github_email)s"' % env)
@@ -178,7 +195,7 @@ def disable(**kwargs):
     from django.conf import settings
     try:
         settings.configure(
-            DEBUG=False, TEMPLATE_DEBUG=False, 
+            DEBUG=False, TEMPLATE_DEBUG=False,
             TEMPLATE_DIRS=(os.path.join(os.getcwd(), 'templates/'),)
         )
     except EnvironmentError:
@@ -214,9 +231,10 @@ def setup_shell():
     with cd('$HOME'):
         run('curl -L http://install.ohmyz.sh | sh')
         sudo('chsh $USER -s $(which zsh);')
+        run('usermod -s $(which zsh);')
         run('curl https://gist.githubusercontent.com/tijptjik/97e1e0380a21249b49d9/raw/9071ee07f29cad69cad70d82d3f1f55033080561/prose.zsh-theme >> .oh-my-zsh/themes/prose.zsh-theme')
         run('mkdir -p $HOME/.tools')
-        with settings(warn_only=True): 
+        with settings(warn_only=True):
             run('git clone https://github.com/rupa/z.git $HOME/.tools/z')
         run('curl https://gist.githubusercontent.com/tijptjik/ac9555e37364287aac37/raw/ecd9fec1fb1e5e4de1181e31e852ddb7205c640b/.zshrc > .zshrc'    )
         run('source $HOME/.zshrc')
@@ -269,13 +287,13 @@ def install_site():
     with settings(warn_only=True):
         sudo('cp %(current_release)s/conf/%(project_url)s /etc/nginx/sites-available' % env)
         sudo('ln -s /etc/nginx/sites-available/%(project_url)s /etc/nginx/sites-enabled/%(project_url)s' % env)
- 
+
 def update_env():
     "Install the required packages from the requirements file using pip"
     run("cd %(current_release)s; virtualenv --no-site-packages --unzip-setuptools env" % env )
     with prefix(". %(current_release)s/env/bin/activate" % env):
         sudo("pip install -r %(current_release)s/%(env_file)s" % env )
-    
+
     # sudo("pip install -r %(current_release)s/%(env_file)s -e %(current_release)s" % env )
     permissions()
 
@@ -335,19 +353,22 @@ def setup_user_dir():
     sudo('mkdir -p %(path)s; chown %(user)s:%(user)s %(path)s;' % env, pty=True)
 
 def setup_github():
-    run('git config --global user.email %(github_email)s' % env)
-    run('git config --global user.name %(github_name)s' % env)
+    if (env.setup_github):
+        run('git config --global user.email %(github_email)s' % env)
+        run('git config --global user.name %(github_name)s' % env)
 
 def prepare_nginx():
     with settings(warn_only=True):
-        sudo('cd /etc/nginx/sites-available; rm default;')
+        sudo('mkdir -p /etc/nginx/{sites-available,sites-enabled}')
+        with cd('/etc/nginx/sites-available'):
+            sudo('rm default;')
 
 def setup_release_dirs():
     """Prepares one or more servers for deployment"""
     with cd(env.path) and settings(warn_only=True):
-        run('virtualenv .;' % env)
-        run("mkdir -p %(domain_path)s/{releases,shared,packages}" % env)
-        run("mkdir -p %(shared_path)s/{system,logs,index}" % env)
+        sudo('virtualenv .;' % env)
+        sudo("mkdir -p %(domain_path)s/{releases,shared,packages}" % env)
+        sudo("mkdir -p %(shared_path)s/{system,logs,index}" % env)
         permissions()
 
 def permissions():
