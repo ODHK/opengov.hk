@@ -18,8 +18,6 @@ django-tastypie==0.10.0
 python-mimeparse>=0.1.4
 django-tastypie-swagger==0.1.1
 unicodecsv==0.9.4
-django-configurations==0.7
-django-storages==1.1.8
 dj-database-url==0.2.2
 django-cache-url==0.6.0
 django-configurations==0.8

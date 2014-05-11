@@ -1,0 +1,285 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-11 22:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: opengovhk/settings.py:13
+msgid "English"
+msgstr ""
+
+#: opengovhk/settings.py:14
+msgid "Chinese (Simplified)"
+msgstr ""
+
+#: opengovhk/settings.py:15
+msgid "Chinese (Traditional, Hong Kong)"
+msgstr ""
+
+#: opengovhk/theme/templates/400.html:5
+msgid "400 - Bad Request"
+msgstr ""
+
+#: opengovhk/theme/templates/403.html:5
+msgid "403 - Forbidden"
+msgstr ""
+
+#: opengovhk/theme/templates/403.html:9
+msgid ""
+"You tried to access a site that you are not authorized to access or you "
+"triggered a security warning."
+msgstr ""
+
+#: opengovhk/theme/templates/404.html:5
+msgid "404 - Not Found"
+msgstr ""
+
+#: opengovhk/theme/templates/500.html:5
+msgid "500 - Server Error"
+msgstr ""
+
+#: opengovhk/theme/templates/500.html:7
+#, python-format
+msgid ""
+"If you need assistance, you may reference this error as <strong>%(ref)s</"
+"strong>."
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:10
+msgid ""
+"This site is currently in dry run mode. All Public Body mail will go to this "
+"mail server:"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:31
+msgid "Requests"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:36
+msgid "Public Bodies"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:41
+msgid "Make a Request!"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:48
+msgid "Search"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:91
+msgid "Account"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:95
+msgid "Public Profile"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:103
+msgid "Logout"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:112
+msgid "Log In /<br/>Sign up"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:139
+#, python-format
+msgid ""
+"Froide is a free and Open Source Project by <a href=\"http://www.okfn.org"
+"\">the Open Knowledge Foundation</a>. If you want to support Froide, please "
+"visit the <a href=\"%(url)s\">repository on GitHub</a>."
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:156
+msgid "About"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:161
+#: opengovhk/theme/templates/help/base.html:4
+msgid "Help"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:163
+msgid "Terms of Use"
+msgstr ""
+
+#: opengovhk/theme/templates/base.html:166
+msgid "Privacy Statement"
+msgstr ""
+
+#: opengovhk/theme/templates/index.html:7
+msgid "Welcome to Hong Kong's Access to Information portal"
+msgstr ""
+
+#: opengovhk/theme/templates/scaffold.html:6
+msgid "Freedom of Information Requests"
+msgstr ""
+
+#. Translators: meta keywords
+#: opengovhk/theme/templates/scaffold.html:20
+msgid ""
+"Freedom of Information Requests, Freedom of Information Law, Public Body "
+"Information"
+msgstr ""
+
+#. Translators: meta description
+#: opengovhk/theme/templates/scaffold.html:22
+#, python-format
+msgid ""
+"%(site)s helps you to make freedom of information requests to public bodies"
+msgstr ""
+
+#: opengovhk/theme/templates/admin_utils/admin_tag_all.html:16
+msgid "Home"
+msgstr ""
+
+#: opengovhk/theme/templates/admin_utils/admin_tag_all.html:19
+msgid "Add tags to multiple items"
+msgstr ""
+
+#: opengovhk/theme/templates/admin_utils/admin_tag_all.html:27
+msgid "Add these tags to all selected items:"
+msgstr ""
+
+#: opengovhk/theme/templates/admin_utils/admin_tag_all.html:29
+msgid "Enter Tags here"
+msgstr ""
+
+#: opengovhk/theme/templates/admin_utils/admin_tag_all.html:42
+msgid "Add tags to these items"
+msgstr ""
+
+#: opengovhk/theme/templates/comments/foirequest/form.html:12
+#, python-format
+msgid "Comment by %(name)s:"
+msgstr ""
+
+#: opengovhk/theme/templates/comments/foirequest/form.html:15
+msgid ""
+"Despite your privacy settings, your real name will be published with comment."
+"<br/>There are <strong>no anonymous comments</strong>."
+msgstr ""
+
+#: opengovhk/theme/templates/comments/foirequest/form.html:18
+msgid "Post Comment"
+msgstr ""
+
+#: opengovhk/theme/templates/comments/foirequest/list.html:4
+msgid "Moderator"
+msgstr ""
+
+#: opengovhk/theme/templates/comments/foirequest/list.html:5
+#, python-format
+msgid "On %(date)s, %(name)s wrote:"
+msgstr ""
+
+#: opengovhk/theme/templates/comments/foirequest/list.html:12
+msgid "Read all"
+msgstr ""
+
+#: opengovhk/theme/templates/help/base.html:12
+msgid "Help Pages"
+msgstr ""
+
+#: opengovhk/theme/templates/help/base.html:15
+msgid "General Information"
+msgstr ""
+
+#: opengovhk/theme/templates/help/base.html:18
+msgid "About Froide"
+msgstr ""
+
+#: opengovhk/theme/templates/help/base.html:21
+msgid "Please donate"
+msgstr ""
+
+#: opengovhk/theme/templates/help/base.html:24
+msgid "Making Requests"
+msgstr ""
+
+#: opengovhk/theme/templates/help/base.html:27
+msgid "Your Privacy"
+msgstr ""
+
+#: opengovhk/theme/templates/help/base.html:30
+msgid "For FoI Officers"
+msgstr ""
+
+#: opengovhk/theme/templates/pagination/pagination.html:5
+#: opengovhk/theme/templates/pagination/pagination.html:9
+msgid "previous"
+msgstr ""
+
+#: opengovhk/theme/templates/pagination/pagination.html:50
+msgid "(current page)"
+msgstr ""
+
+#: opengovhk/theme/templates/pagination/pagination.html:90
+#: opengovhk/theme/templates/pagination/pagination.html:94
+msgid "next"
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:7
+#, python-format
+msgid "Search Results for \"%(query)s\""
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:13
+msgid "Your Topic"
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:17
+msgid "Search For Information"
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:27
+msgid "Related Freedom of Information Requests"
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:36
+#, python-format
+msgid "No relevant requests found for \"%(query)s\"."
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:37
+msgid "You can browse the list of existing requests."
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:43
+msgid "Related Public Bodies"
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:51
+#, python-format
+msgid "No relevant Public bodies found for \"%(query)s\"."
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:52
+msgid "You can browse the list of Public Bodies."
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:60
+msgid "Please provide at least one search term"
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:65
+msgid "Couldn't find what you were looking for?"
+msgstr ""
+
+#: opengovhk/theme/templates/search/search.html:69
+msgid "Make a Freedom of Information Request now!"
+msgstr ""

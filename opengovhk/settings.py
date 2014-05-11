@@ -8,6 +8,25 @@ from froide.settings import ThemeBase, Base # noqa
 class OpenGovHK(ThemeBase, Base):
     FROIDE_THEME = 'opengovhk.theme'
 
+    EXTRA_LANG_INFO = {
+        'zh-hk': {
+            'code': 'zh-hk',
+            'name': 'Chinese (Hong Kong)',
+            'name_local': u'繁體中文 (香港)',
+            'bidi': False
+        },
+    }
+    import django.conf.locale
+    LANG_INFO = dict(django.conf.locale.LANG_INFO.items() + EXTRA_LANG_INFO.items())
+    django.conf.locale.LANG_INFO = LANG_INFO
+    
+    gettext = lambda s: s
+    LANGUAGES = (
+        ('en', gettext('English')),
+        ('zh-cn', gettext('Chinese (Simplified)')),
+        ('zh-hk', gettext('Chinese (Traditional, Hong Kong)')),
+    )
+    
     ROOT_URLCONF = 'froide.urls'
 
     SITE_NAME = "OpenGov.HK"
