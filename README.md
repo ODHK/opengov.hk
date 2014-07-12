@@ -10,7 +10,7 @@ There is currently no official directory of *email addresses* of Access to Infor
 
 # Translation
 
-We want this website to function in both English and Chinese. Please help us in achieving this by providing translations at https://www.transifex.com/projects/p/froide/language/zh_HK/. Thank you so much for your help!
+We want this website to function in both English and Chinese. Please help us in achieving this by providing translations at https://www.transifex.com/projects/p/opengovhk/ . Thank you so much for your help!
 
 # Technical stuff
 
