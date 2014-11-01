@@ -25,6 +25,14 @@ class OpenGovHK(ThemeBase, Base):
     }
 
     @property
+    def LOCALE_PATHS(self):
+        return list(super(OpenGovHK, self).LOCALE_PATHS.default) + [
+        os.path.abspath(
+            os.path.join(os.path.dirname(__file__), '..', "locale")
+        )
+    ]
+
+    @property
     def INSTALLED_APPS(self):
         installed = super(OpenGovHK, self).INSTALLED_APPS
         # installed += [
