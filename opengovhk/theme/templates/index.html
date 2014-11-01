@@ -1,4 +1,4 @@
-{% overextends "base.html" %}
+{% overextends "index.html" %}
 {% load i18n %}
 
 {% block index_banner %}
@@ -9,3 +9,18 @@
 </div>
 {% endblock %}
 
+{% block site_description %}
+<p>
+  {% blocktrans %}This site publishes Access to Information requests and helps you to make your own!{% endblocktrans %}
+</p>
+{% endblock %}
+
+{% block sample_letter %}
+{% blocktrans %}Access to Information Request
+
+To: General Office of the Chief Executive's Office
+
+Dear Sir or Madam,
+I request information about the following:
+...{% endblocktrans %}
+{% endblock %}
