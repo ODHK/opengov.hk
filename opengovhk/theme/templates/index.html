@@ -16,11 +16,28 @@
 {% endblock %}
 
 {% block sample_letter %}
-{% blocktrans %}Access to Information Request
+{% blocktrans %}
+Access to Information Request
 
-To: General Office of the Chief Executive's Office
+    To: General Office of the Chief Executive's Office
 
-Dear Sir or Madam,
-I request information about the following:
-...{% endblocktrans %}
+    Dear Sir or Madam,
+    I request information about the following:
+    ...{% endblocktrans %}
+{% endblock %}
+
+{% block index_sub_left %}
+<h3>{% blocktrans %}What is Access to Information?{% endblocktrans %}</h3>
+<p>{% blocktrans %}Everyone has the right under the Code of Access to Information to ask for and receive access to information held by the Hong Kong government.{% endblocktrans %}
+  <br/>
+  <a class="target-new" href="http://www.access.gov.hk">{% blocktrans %}Read more about the Code on Access to Information{% endblocktrans %}</a>
+</p>
+{% endblock %}
+
+{% block index_sub_right %}
+<h3>{% blocktrans %}What does this site do?{% endblocktrans %}</h3>
+<p>{% blocktrans %}This site publishes Access to Information requests and replies so that others don't have to ask for the same information again, and replies (especially unfair dismissals) can be scrutinized by the public.{% endblocktrans %}
+  <br/>
+  <a href="{% url 'help-index' %}">{% blocktrans %}Read more about the concept{% endblocktrans %}</a>
+</p>
 {% endblock %}

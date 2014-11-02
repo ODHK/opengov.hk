@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-01 10:36+0100\n"
+"POT-Creation-Date: 2014-11-01 15:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,4 +36,18 @@ msgid ""
 "Dear Sir or Madam,\n"
 "I request information about the following:\n"
 "..."
+msgstr ""
+
+#: opengovhk/theme/templates/index.html:29
+msgid "What is Access to Information?"
+msgstr ""
+
+#: opengovhk/theme/templates/index.html:30
+msgid ""
+"Everyone has the right under the Code of Access to Information to ask for "
+"and receive access to information held by the Hong Kong government."
+msgstr ""
+
+#: opengovhk/theme/templates/index.html:32
+msgid "Read more about the Code on Access to Information"
 msgstr ""
