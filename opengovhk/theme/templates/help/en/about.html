@@ -1,0 +1,13 @@
+{% extends "help/base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "About"} - {{SITE_NAME}}{% endblock %}
+
+{% block helpbody %}
+<h2>About</h2>
+
+<p>Opengov.hk is a project of <a href="http://opendatahk.com">Open Data Hong Kong</a> to make requesting for information under the Hong Kong government's <a href="http://www.access.gov.hk">Code on Access to Information</a> easier, more transparent, and hopefully fairer by clearly showing how the government treats the requests.</p>
+<p>Try <a href="{% url 'foirequest-make_request' %}">making a request now</a>, or <a href="{% url 'foirequest-list' %}">seeing which requests have already been made</a>! If you want more information about how to make a request, <a href="{% url 'help-making_requests' %}">please read this</a>.</p>
+
+{% endblock %}

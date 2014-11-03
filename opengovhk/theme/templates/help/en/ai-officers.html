@@ -1,0 +1,131 @@
+{% overextends "help/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "For Access to Information officers" %} - {{SITE_NAME}}{% endblock %}
+
+{% block helpbody %}
+<h1 id="officers">Access to Information officer questions <a href="#officers">#</a> </h1>
+
+<dl>
+
+<dt id="top">I just got here from bottom of a request, what is going on? <a href="#top">#</a> </dt>
+
+<dd><p>Opengov.hk is a service run to help ordinary members
+of the public make requests under the Code on Access to Information, and easily track and share the responses.</p>
+
+<p>The request you received was made by someone using opengov.hk. You can
+simply reply to the request as you would any other request from an individual.
+The only difference is that your response will be automatically published on
+the Internet.
+</p>
+<p>If you have privacy or other concerns, please read the answers below.
+You might also like to read the <a
+href="{% url 'help-about' %}">introduction to opengov.hk</a> to find out more about what
+the site does from the point of view of a user. You can also search the
+site to find the authority that you work for, and view the status of
+any requests made using the site.
+
+<p>Finally, we welcome comments and
+thoughts from AI officers, so please <a href="mailto:contact@opengov.hk">get in touch</a>.
+</p>
+</dd>
+
+<dt id="responses">Why are you publishing responses to requests? <a href="#responses">#</a> </dt>
+
+<dd>We think there are lots of benefits. Most importantly it will encourage the
+public to be more interested and involved in the work of government. We
+also hope that it will reduce the number of duplicate requests on any
+subject that a public body will receive. Given that responses to Code on Access to Information requests contain public information, which anybody could easily request
+again from the public authority, we think there should be no reason not to
+publish it widely.
+</dd>
+
+<dt id="realpeople">Are the people making requests real people? <a href="#realpeople">#</a> </dt>
+
+<dd>Yes. For the purposes of keeping track of responses we use
+computer-generated email addresses for each request. However, before
+they can send a request, each user must register on the site with a
+unique email address that we then verify. You can search this site and
+find a page listing all requests that each person has made.
+</dd>
+
+<dt id="email_only">An email isn't a sufficient address for a request! <a href="#email_only">#</a> </dt>
+
+<dd>Yes it is.
+</dd>
+
+<dt id="vexatious">Aren't you making lots of vexatious requests? <a href="#vexatious">#</a> </dt>
+
+<dd><p>We are not making any requests. We are sending requests on
+behalf of our users, who are real people making the requests. </p>
+<p>Look at it like this - if lots of different people made requests from
+different Hotmail email addresses, then you would not think that Microsoft were
+making vexatious requests. It is exactly the same if lots of requests are made
+via opengov.hk. Moreover, since all requests are public it is much easier
+for you to see if one of our users is making vexatious requests. </p>
+</dd>
+
+<dt id="spam_problems">I can see a request on WhatDoTheyKnow, but we never got it by email!<a href="#spam_problems">#</a> </dt>
+
+<dd><p>If a request appears on the site, then we have attempted to send it to
+the authority by email. Any delivery failure messages will automatically
+appear on the site. <a
+href="mailto:contact@opengov.hk">Contact us</a> if there is a better address we can
+use.</p>
+<p>Requests are sometimes not delivered because they are quietly removed by
+"spam filters" in the IT department of the authority. Authorities can make
+sure this doesn't happen by asking their IT departments to "whitelist"
+any email from <strong>@opengov.hk</strong>.
+If you <a href="mailto:contact@opengov.hk">ask us</a> we will resend any request,
+and/or give technical details of delivery so an IT department can chase
+up what happened to the message.
+</p>
+
+<dt id="days">How do you calculate the deadline shown on request pages?<a href="#days">#</a> </dt>
+
+<dd>
+<p>Don't worry too much about this. The Code says that
+<blockquote>
+The target response times set out in [...] 
+the Code should be regarded as upper limits.  Information should always be provided 
+as quickly as possible and responses will therefore, in many cases, be made well 
+within these target times.
+</blockquote>
+If you think you will need some extra time to respond to a request, just tell the requester as much, explaining in a sentence or two why that is the case. They will appreciate it, and the amout of hard work you do.
+</p>
+</dd>
+
+
+<dt id="names">Why do you publish the names of civil servants and the text of emails? <a href="#names">#</a> </dt>
+
+<dd>We consider what officers or servants do in the course of their employment
+to be public information. We will only remove content in exceptional
+circumstances, see our <a href="{% url 'help-privacy' %}#public_servant_takedown">take down policy</a>.
+</dd>
+
+<dt id="mobiles">Do you publish email addresses or mobile phone numbers? <a href="#mobiles">#</a> </dt>
+
+<dd><p>To prevent spam, we automatically remove most emails and some mobile numbers from
+responses to requests.  Please <a href="contact@opengov.hk">contact us</a> if we've
+missed one.
+For technical reasons we don't always remove them from attachments, such as certain PDFs.</p>
+<p>If you need to know what an address was that we've removed, please <a
+  href="contact@opengov.hk">get in touch with us</a>. Occasionally, an email address
+forms an important part of a response and we will post it up in an obscured
+form in an annotation.
+</dd>
+
+<dt id="copyright"><a name="commercial"></a>What is your policy on copyright of documents?<a href="#copyright">#</a> </dt>
+
+<dd>The Code on Access to Information is "applicant blind", so anyone in the
+world can request the same document and get a copy of it.
+
+If you think our making a document available on the internet infringes your
+copyright, you may <a href="contact@opengov.hk">contact us</a> and ask us
+to take it down.  However, to save tax payers' money by preventing duplicate
+requests, and for good public relations, we'd advise you not to do that.
+</dd>
+
+</dl>
+{% endblock %}
+
