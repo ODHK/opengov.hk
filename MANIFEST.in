@@ -2,4 +2,4 @@ include README.md LICENSE.txt
 recursive-include opengovhk/theme/templates *
 recursive-include opengovhk/theme/static *
 recursive-exclude opengovhk/theme/static/img/jurisdictions */*
-recursive-include opengovhk/theme/locale *.po
+recursive-include opengovhk/theme/locale *.po *.mo
