@@ -28,7 +28,7 @@ class OpenGovHK(ThemeBase, Base):
     def LOCALE_PATHS(self):
         return list(super(OpenGovHK, self).LOCALE_PATHS.default) + [
         os.path.abspath(
-            os.path.join(os.path.dirname(__file__), '..', "locale")
+            os.path.join(os.path.dirname(__file__), "locale")
         )
     ]
 
